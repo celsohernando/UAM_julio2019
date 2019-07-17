@@ -1,6 +1,6 @@
 # UAM_julio2019
 
-Seleccionar y copiar el siguiente texto:
+Seleccionar y copiar el siguiente texto (incluidos los [ ] ):
 
 [{
 	"id": "a9ba2a0f.7097e8",
