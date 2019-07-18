@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1ecfd010.8ee3b",
+        "type": "wiotp out",
+        "z": "70600496.77fccc",
+        "authType": "d",
+        "qs": "false",
+        "qsDeviceId": "",
+        "deviceKey": "556cb087.c90e5",
+        "deviceType": "",
+        "deviceId": "",
+        "event": "event",
+        "format": "json",
+        "qos": "",
+        "name": "",
+        "x": 676.5,
+        "y": 335,
+        "wires": []
+    },
+    {
+        "id": "556cb087.c90e5",
+        "type": "wiotp-credentials",
+        "z": "",
+        "name": "",
+        "org": "j73hvh",
+        "serverName": "",
+        "devType": "WindTurbine",
+        "devId": "Aerogenerador01",
+        "keepalive": "60",
+        "cleansession": true,
+        "tls": "",
+        "usetls": false
+    }
+]
