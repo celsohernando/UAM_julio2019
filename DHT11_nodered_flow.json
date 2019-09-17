@@ -17,8 +17,8 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "x": 150,
-        "y": 420,
+        "x": 130,
+        "y": 400,
         "wires": [
             [
                 "c9660e94.dc953"
@@ -36,11 +36,11 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 338.5,
-        "y": 564.5,
+        "x": 350,
+        "y": 500,
         "wires": [
             [
-                "c28aaca9.28d91"
+                "52d1f9a1.e76898"
             ],
             [
                 "42ab208f.c0c91"
@@ -58,7 +58,7 @@
         "active": true,
         "console": "false",
         "complete": "false",
-        "x": 770,
+        "x": 690,
         "y": 400,
         "wires": []
     },
@@ -67,7 +67,7 @@
         "type": "debug",
         "z": "56066d81.914504",
         "name": "",
-        "active": false,
+        "active": true,
         "console": "false",
         "complete": "false",
         "x": 690,
@@ -79,7 +79,7 @@
         "type": "debug",
         "z": "56066d81.914504",
         "name": "",
-        "active": false,
+        "active": true,
         "console": "false",
         "complete": "false",
         "x": 690,
@@ -87,14 +87,12 @@
         "wires": []
     },
     {
-        "id": "c28aaca9.28d91",
-        "type": "function",
+        "id": "52d1f9a1.e76898",
+        "type": "json",
         "z": "56066d81.914504",
-        "name": "Parse values",
-        "func": "str = msg.payload;\nif ( str.charAt(0) == \"T\") {\n    \n    readings = str.match(/[+-]?\\d+(\\.\\d+)?/g);\n    msg.payload = { \"temperature\":parseFloat(readings[0]),\"humidity\":parseFloat(readings[1])}\n    return msg;\n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 590,
+        "name": "",
+        "pretty": false,
+        "x": 530,
         "y": 400,
         "wires": [
             [
