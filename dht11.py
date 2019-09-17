@@ -10,6 +10,9 @@ while True:
     if humidity is not None and temperature is not None:
       data = {'temperature': temperature, 'humidity': humidity}
       print(json.dumps(data))
+      
     else:
-        print("Sensor failure. Check wiring.");
+      data = {'Error': 'check wirings'}
+      print(json.dumps(data))
+      
     time.sleep(3)
