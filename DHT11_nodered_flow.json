@@ -1,0 +1,105 @@
+[
+    {
+        "id": "56066d81.914504",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "75874e62.7f3ca",
+        "type": "inject",
+        "z": "56066d81.914504",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "c9660e94.dc953"
+            ]
+        ]
+    },
+    {
+        "id": "c9660e94.dc953",
+        "type": "exec",
+        "z": "56066d81.914504",
+        "command": "/usr/bin/python3 /home/pi/dht11.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 338.5,
+        "y": 564.5,
+        "wires": [
+            [
+                "c28aaca9.28d91"
+            ],
+            [
+                "42ab208f.c0c91"
+            ],
+            [
+                "3cd608c.1879af8"
+            ]
+        ]
+    },
+    {
+        "id": "58f9c873.20b848",
+        "type": "debug",
+        "z": "56066d81.914504",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 770,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "42ab208f.c0c91",
+        "type": "debug",
+        "z": "56066d81.914504",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 690,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "3cd608c.1879af8",
+        "type": "debug",
+        "z": "56066d81.914504",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 690,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c28aaca9.28d91",
+        "type": "function",
+        "z": "56066d81.914504",
+        "name": "Parse values",
+        "func": "str = msg.payload;\nif ( str.charAt(0) == \"T\") {\n    \n    readings = str.match(/[+-]?\\d+(\\.\\d+)?/g);\n    msg.payload = { \"temperature\":parseFloat(readings[0]),\"humidity\":parseFloat(readings[1])}\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 400,
+        "wires": [
+            [
+                "58f9c873.20b848"
+            ]
+        ]
+    }
+]
